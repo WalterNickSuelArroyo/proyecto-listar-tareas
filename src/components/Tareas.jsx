@@ -77,7 +77,6 @@ const Tareas = () => {
         </div>
         <div
   className={`w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto p-4 sm:p-6 mt-10 ${
-    // En modo oscuro, aplicamos fondo transparente y borde blanco
     "bg-blue-50 dark:bg-transparent dark:border-2 dark:border-white rounded-lg shadow-lg"
   }`}
 >

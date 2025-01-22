@@ -13,7 +13,6 @@ import {
 const TaskInput = ({ taskText, setTaskText, category, setCategory, addTask, error }) => {
   return (
     <div className="flex flex-col gap-4 mb-6">
-      {/* Ajuste para columnas en tamaños medianos */}
       <div className="flex flex-col md:flex-row md:flex-wrap items-center gap-4">
         <Input
           value={taskText}
@@ -35,7 +34,6 @@ const TaskInput = ({ taskText, setTaskText, category, setCategory, addTask, erro
             </SelectGroup>
           </SelectContent>
         </Select>
-        {/* Botón ocupa 100% en tamaños medianos y pasa a una nueva fila */}
         <Button
           onClick={addTask}
           className="bg-green-700 text-white w-full md:w-auto md:flex-grow-0"
