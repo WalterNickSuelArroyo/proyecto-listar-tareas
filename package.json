@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://WalterNickSuelArroyo.github.io/proyecto-listar-tareas",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
