@@ -56,7 +56,7 @@ const Tareas = () => {
       case "trabajo":
         return "bg-white text-black hover:bg-blue-300 border-l-4 border-l-blue-500";
       case "urgente":
-        return "bgwhite text-black hover:bg-red-300 border-l-4 border-l-red-500";
+        return "bg-white text-black hover:bg-red-300 border-l-4 border-l-red-500";
       default:
         return "";
     }
