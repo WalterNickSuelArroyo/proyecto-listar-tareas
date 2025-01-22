@@ -1,21 +1,14 @@
 import TaskInput from "@/components/TaskInput";
 import TaskList from "@/components/TaskList";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import DarkMode from "@/DarkMode";
 import { useEffect, useState } from "react";
-
 
 const Tareas = () => {
   const [taskText, setTaskText] = useState("");
   const [category, setCategory] = useState("");
   const [tasks, setTasks] = useState(() => {
-    try {
-      const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-      return Array.isArray(storedTasks) ? storedTasks : [];
-    } catch (error) {
-      console.error("Error al leer las tareas desde localStorage:", error);
-      return [];
-    }
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    return Array.isArray(storedTasks) ? storedTasks : [];
   });
   const [error, setError] = useState("");
 
@@ -59,11 +52,11 @@ const Tareas = () => {
   const getCategoryColor = (category) => {
     switch (category) {
       case "personal":
-        return "bg-green-700 text-green-100";
+        return "bg-green-700 text-green-100 hover:bg-green-600";
       case "trabajo":
-        return "bg-blue-700 text-blue-100";
+        return "bg-blue-700 text-blue-100 hover:bg-blue-600";
       case "urgente":
-        return "bg-red-900 text-red-100";
+        return "bg-red-900 text-red-100 hover:bg-red-800";
       default:
         return "";
     }
@@ -71,32 +64,28 @@ const Tareas = () => {
 
   return (
     <main className="bg-gray-100 min-h-screen dark:bg-gray-800">
-      <ThemeProvider>
-        <div className="flex justify-end p-4">
-          <DarkMode />
-        </div>
-        <div
-  className={`w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto p-4 sm:p-6 mt-10 ${
-    "bg-blue-50 dark:bg-transparent dark:border-2 dark:border-white rounded-lg shadow-lg"
-  }`}
->
-          <h1 className="text-2xl font-bold mb-4 text-center dark:text-white">Lista de Tareas</h1>
-          <TaskInput
-            taskText={taskText}
-            setTaskText={setTaskText}
-            category={category}
-            setCategory={setCategory}
-            addTask={addTask}
-            error={error}
-          />
-          <TaskList
-            tasks={tasks}
-            toggleTaskCompletion={toggleTaskCompletion}
-            removeTask={removeTask}
-            getCategoryColor={getCategoryColor}
-          />
-        </div>
-      </ThemeProvider>
+      <div className="flex justify-end p-4">
+        <DarkMode />
+      </div>
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto p-4 sm:p-6 mt-10 bg-blue-50 dark:bg-transparent dark:border-2 dark:border-white rounded-lg shadow-lg">
+        <h1 className="text-2xl font-bold mb-8 text-center dark:text-white">
+          Lista de Tareas
+        </h1>
+        <TaskInput
+          taskText={taskText}
+          setTaskText={setTaskText}
+          category={category}
+          setCategory={setCategory}
+          addTask={addTask}
+          error={error}
+        />
+        <TaskList
+          tasks={tasks}
+          toggleTaskCompletion={toggleTaskCompletion}
+          removeTask={removeTask}
+          getCategoryColor={getCategoryColor}
+        />
+      </div>
     </main>
   );
 };

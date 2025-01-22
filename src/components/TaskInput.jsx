@@ -17,7 +17,7 @@ const TaskInput = ({ taskText, setTaskText, category, setCategory, addTask, erro
         <Input
           value={taskText}
           onChange={(e) => setTaskText(e.target.value)}
-          className="w-full sm:w-auto flex-grow dark:text-white"
+          className="w-full sm:w-full md:w-auto flex-grow dark:text-white"
           type="text"
           placeholder="Escribe una tarea"
         />
@@ -36,7 +36,7 @@ const TaskInput = ({ taskText, setTaskText, category, setCategory, addTask, erro
         </Select>
         <Button
           onClick={addTask}
-          className="bg-green-700 text-white w-full md:w-auto md:flex-grow-0"
+          className="bg-teal-800 text-white w-full md:flex-grow-0 dark:text-white md:w-full hover:bg-teal-700 hover:text-white border-none"
           variant="outline"
         >
           Agregar tarea

@@ -9,7 +9,7 @@ const TaskList = ({
   return (
     <div>
       {tasks.length === 0 ? (
-        <p className="text-center text-gray-500">
+        <p className="text-center text-gray-300">
           No hay tareas por el momento
         </p>
       ) : (

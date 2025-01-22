@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 
-const TaskItem = ({ task, index, toggleTaskCompletion, removeTask, getCategoryColor }) => {
+const TaskItem = ({
+  task,
+  index,
+  toggleTaskCompletion,
+  removeTask,
+  getCategoryColor,
+}) => {
   return (
     <li
       className={`flex justify-between items-center p-4 rounded-lg shadow-md ${getCategoryColor(
