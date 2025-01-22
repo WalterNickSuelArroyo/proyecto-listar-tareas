@@ -9,7 +9,7 @@ const TaskItem = ({
 }) => {
   return (
     <li
-      className={`flex justify-between items-center p-4 rounded-lg shadow-md ${getCategoryColor(
+      className={`flex justify-between items-center p-4 rounded-lg shadow-md  border-2 ${getCategoryColor(
         task.category
       )}`}
     >
@@ -24,7 +24,7 @@ const TaskItem = ({
         </span>
       </div>
       <Button
-        className="bg-red-500 text-white hover:text-gray-100 hover:border"
+        className="bg-red-500 text-white hover:text-gray-800 hover:border"
         onClick={() => removeTask(index)}
       >
         Eliminar
