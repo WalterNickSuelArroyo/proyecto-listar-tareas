@@ -59,11 +59,11 @@ const Tareas = () => {
   const getCategoryColor = (category) => {
     switch (category) {
       case "personal":
-        return "bg-green-100 text-green-800";
+        return "bg-green-700 text-green-100";
       case "trabajo":
-        return "bg-blue-100 text-blue-800";
+        return "bg-blue-700 text-blue-100";
       case "urgente":
-        return "bg-red-100 text-red-800";
+        return "bg-red-900 text-red-100";
       default:
         return "";
     }
@@ -75,8 +75,13 @@ const Tareas = () => {
         <div className="flex justify-end p-4">
           <DarkMode />
         </div>
-        <div className="max-w-[50%] mx-auto p-6 bg-gray-50 rounded-lg shadow-lg mt-10">
-          <h1 className="text-2xl font-bold mb-4 text-center">Lista de Tareas</h1>
+        <div
+  className={`w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto p-4 sm:p-6 mt-10 ${
+    // En modo oscuro, aplicamos fondo transparente y borde blanco
+    "bg-blue-50 dark:bg-transparent dark:border-2 dark:border-white rounded-lg shadow-lg"
+  }`}
+>
+          <h1 className="text-2xl font-bold mb-4 text-center dark:text-white">Lista de Tareas</h1>
           <TaskInput
             taskText={taskText}
             setTaskText={setTaskText}

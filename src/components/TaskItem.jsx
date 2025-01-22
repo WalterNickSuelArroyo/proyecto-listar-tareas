@@ -14,11 +14,11 @@ const TaskItem = ({ task, index, toggleTaskCompletion, removeTask, getCategoryCo
           onChange={() => toggleTaskCompletion(index)}
         />
         <span className="text-sm">
-          {task.text}
+          {task.text.length > 10 ? `${task.text.slice(0, 10)}...` : task.text}
         </span>
       </div>
       <Button
-        className="bg-red-500 text-white hover:text-gray-900"
+        className="bg-red-500 text-white hover:text-gray-100 hover:border"
         onClick={() => removeTask(index)}
       >
         Eliminar

@@ -1,29 +1,40 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './components/ui/dropdown-menu'
-import { Button } from './components/ui/button'
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from './components/ThemeProvider'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './components/ui/dropdown-menu';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from './components/ThemeProvider';
 
 const DarkMode = () => {
-  const {setTheme} = useTheme();
+  const { theme, setTheme } = useTheme();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+        <button
+          className="flex items-center justify-center p-2 rounded-full bg-transparent focus:outline-none"
+          aria-label="Toggle theme"
+        >
+          {/* Sun icon */}
+          <Sun
+            className={`h-[1.2rem] w-[1.2rem] transition-all ${
+              theme === 'dark' ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+            }`}
+          />
+          {/* Moon icon */}
+          <Moon
+            className={`absolute h-[1.2rem] w-[1.2rem] transition-all ${
+              theme === 'dark' ? 'opacity-100 scale-100 text-white' : 'opacity-0 scale-0 text-gray-700'
+            }`}
+          />
+        </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
+      <DropdownMenuContent
+        align="end"
+        className={theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'}
+      >
+        <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default DarkMode
+export default DarkMode;
