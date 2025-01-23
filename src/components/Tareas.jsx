@@ -52,11 +52,11 @@ const Tareas = () => {
   const getCategoryColor = (category) => {
     switch (category) {
       case "personal":
-        return "bg-white text-black border-l-8 border-l-green-500";
+        return "border-2 border-green-500 bg-white text-black border-l-8 border-l-green-500";
       case "trabajo":
-        return "bg-white text-black border-l-8 border-l-blue-500";
+        return "border-2 border-blue-500 bg-white text-black border-l-8 border-l-blue-500";
       case "urgente":
-        return "bg-white text-black border-l-8 border-l-red-500";
+        return "border-2 border-red-500 bg-white text-black border-l-8 border-l-red-500";
       default:
         return "";
     }

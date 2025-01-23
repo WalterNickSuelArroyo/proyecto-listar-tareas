@@ -9,7 +9,7 @@ const TaskItem = ({
 }) => {
   return (
     <li
-      className={`flex justify-between items-center p-4 rounded-lg shadow-md  border-2 ${getCategoryColor(
+      className={`flex justify-between items-center p-4 rounded-lg shadow-md ${getCategoryColor(
         task.category
       )}`}
     >
