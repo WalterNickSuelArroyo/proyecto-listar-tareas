@@ -24,7 +24,7 @@ const TaskItem = ({
         </span>
       </div>
       <Button
-        className="bg-red-500 text-white hover:text-gray-800 hover:border"
+        className="bg-red-500 text-white hover:border hover:bg-red-600"
         onClick={() => removeTask(index)}
       >
         Eliminar

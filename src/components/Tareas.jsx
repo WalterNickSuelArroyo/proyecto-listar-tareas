@@ -52,11 +52,11 @@ const Tareas = () => {
   const getCategoryColor = (category) => {
     switch (category) {
       case "personal":
-        return "bg-white text-black hover:bg-green-300 border-l-4 border-l-green-500";
+        return "bg-white text-black border-l-8 border-l-green-500";
       case "trabajo":
-        return "bg-white text-black hover:bg-blue-300 border-l-4 border-l-blue-500";
+        return "bg-white text-black border-l-8 border-l-blue-500";
       case "urgente":
-        return "bg-white text-black hover:bg-red-300 border-l-4 border-l-red-500";
+        return "bg-white text-black border-l-8 border-l-red-500";
       default:
         return "";
     }
